@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    url: jdbc:tc:postgresql:13:///testdb
+    username: test_user
+    password: test_pass
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: true
+        format_sql: true
+  liquibase:
+    enabled: true
+    change-log: classpath:db/migration/db.changelog-master.yaml
+
+logging:
+  level:
+    com.example.bankcards: DEBUG
+    org.springframework.security: DEBUG
+    org.testcontainers: INFO
+
+jwt:
+  secret: test-jwt-secret-key-for-testing-only-2024
+  expiration: 3600000
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: false

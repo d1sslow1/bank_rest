@@ -1,0 +1,17 @@
+# Maven
+target/
+*.jar
+*.war
+*.ear
+
+# IDE
+.idea/
+*.iml
+*.iws
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
