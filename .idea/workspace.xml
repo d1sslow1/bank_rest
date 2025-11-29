@@ -101,7 +101,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764363591446</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="реализована система управления банковскими картами&#10;&#10;- Добавлена аутентификация JWT + Spring Security&#10;- Реализованы роли ADMIN и USER&#10;- Созданы CRUD операции для карт&#10;- Добавлены переводы между картами&#10;- Настроено шифрование и маскирование данных&#10;- Добавлены Liquibase миграции&#10;- Настроен Swagger UI&#10;- Добавлены Docker конфигурации&#10;- Написаны unit-тесты&quot;">
+      <option name="closed" value="true" />
+      <created>1764363911331</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1764363911331</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
