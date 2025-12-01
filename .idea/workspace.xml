@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2023cce0-3599-433f-9909-6bf0e48df178" name="Changes" comment="реализована система управления банковскими картами&#10;&#10;- Добавлена аутентификация JWT + Spring Security&#10;- Реализованы роли ADMIN и USER&#10;- Созданы CRUD операции для карт&#10;- Добавлены переводы между картами&#10;- Настроено шифрование и маскирование данных&#10;- Добавлены Liquibase миграции&#10;- Настроен Swagger UI&#10;- Добавлены Docker конфигурации&#10;- Написаны unit-тесты&quot;" />
+    <list default="true" id="2023cce0-3599-433f-9909-6bf0e48df178" name="Changes" comment="реализована система управления банковскими картами&#10;&#10;- Добавлена аутентификация JWT + Spring Security&#10;- Реализованы роли ADMIN и USER&#10;- Созданы CRUD операции для карт&#10;- Добавлены переводы между картами&#10;- Настроено шифрование и маскирование данных&#10;- Добавлены Liquibase миграции&#10;- Настроен Swagger UI&#10;- Добавлены Docker конфигурации&#10;- Написаны unit-тесты&quot;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankcards/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankcards/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankcards/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankcards/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankcards/entity/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankcards/entity/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankcards/entity/Transfer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankcards/entity/Transfer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankcards/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankcards/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/bankcards/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/bankcards/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/001-initial-schema.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/001-initial-schema.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/002-insert-test-data.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/002-insert-test-data.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/bankcards/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/bankcards/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/bankcards/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/bankcards/controller/AuthController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/bankcards/entity/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/bankcards/entity/Card.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/bankcards/entity/Transfer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/bankcards/entity/Transfer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/bankcards/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/bankcards/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/bankcards/exception/GlobalExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/bankcards/exception/GlobalExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/migration/001-initial-schema.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/migration/001-initial-schema.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/migration/002-insert-test-data.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/migration/002-insert-test-data.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,18 +42,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "d1sslow1"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;d1sslow1&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/d1sslow1/bank_rest.git",
-    "accountId": "90945ccb-780f-4a48-a1a9-05a93c976d29"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/d1sslow1/bank_rest.git&quot;,
+    &quot;accountId&quot;: &quot;90945ccb-780f-4a48-a1a9-05a93c976d29&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -40,25 +62,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.BankCardsApplication.executor": "Run",
-    "Maven.card-management-system [clean...].executor": "Run",
-    "Maven.card-management-system [clean].executor": "Run",
-    "Maven.card-management-system [compile].executor": "Run",
-    "Maven.card-management-system [org.springframework.boot:spring-boot-maven-plugin:3.2.0:run].executor": "Run",
-    "Maven.card-management-system [spring-boot:run...].executor": "Run",
-    "Maven.card-management-system [test...].executor": "Run",
-    "Maven.card-management-system [test].executor": "Run",
-    "Maven.card-management-system [validate].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Properties"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.BankCardsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.card-management-system [clean...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.card-management-system [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.card-management-system [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.card-management-system [org.springframework.boot:spring-boot-maven-plugin:3.2.0:run].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.card-management-system [spring-boot:run...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.card-management-system [test...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.card-management-system [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.card-management-system [validate].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Properties&quot;
   }
-}]]></component>
+}</component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn test -Dtest=CardServiceTest,CardControllerTest" />
@@ -109,7 +131,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764363911331</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="реализована система управления банковскими картами&#10;&#10;- Добавлена аутентификация JWT + Spring Security&#10;- Реализованы роли ADMIN и USER&#10;- Созданы CRUD операции для карт&#10;- Добавлены переводы между картами&#10;- Настроено шифрование и маскирование данных&#10;- Добавлены Liquibase миграции&#10;- Настроен Swagger UI&#10;- Добавлены Docker конфигурации&#10;- Написаны unit-тесты&quot;">
+      <option name="closed" value="true" />
+      <created>1764421405564</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1764421405564</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

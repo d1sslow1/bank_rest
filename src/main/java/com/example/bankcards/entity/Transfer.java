@@ -1,17 +1,21 @@
 package com.example.bankcards.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Data
 @Entity
 @Table(name = "transfers")
 @EntityListeners(AuditingEntityListener.class)
+@Getter
+@Setter
+@ToString
 public class Transfer {
 
     @Id
@@ -20,10 +24,12 @@ public class Transfer {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "from_card_id", nullable = false)
+    @ToString.Exclude
     private Card fromCard;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "to_card_id", nullable = false)
+    @ToString.Exclude
     private Card toCard;
 
     @Column(nullable = false, precision = 15, scale = 2)

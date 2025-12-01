@@ -2,6 +2,11 @@ databaseChangeLog:
   - changeSet:
       id: 001-create-users-table
       author: bank_system
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - tableExists:
+                tableName: users
       changes:
         - createTable:
             tableName: users
@@ -51,6 +56,14 @@ databaseChangeLog:
   - changeSet:
       id: 002-create-cards-table
       author: bank_system
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - tableExists:
+                tableName: cards
+        - sqlCheck:
+            sql: "SELECT COUNT(*) FROM users"
+            expectedResult: "0"
       changes:
         - createTable:
             tableName: cards
@@ -114,6 +127,14 @@ databaseChangeLog:
   - changeSet:
       id: 003-create-transfers-table
       author: bank_system
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - tableExists:
+                tableName: transfers
+        - sqlCheck:
+            sql: "SELECT COUNT(*) FROM cards"
+            expectedResult: "0"
       changes:
         - createTable:
             tableName: transfers

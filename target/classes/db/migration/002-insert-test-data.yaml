@@ -2,6 +2,13 @@ databaseChangeLog:
   - changeSet:
       id: 004-insert-test-users
       author: bank_system
+      preConditions:
+        - onFail: MARK_RAN
+        - tableExists:
+            tableName: users
+        - sqlCheck:
+            sql: "SELECT COUNT(*) FROM users WHERE username = 'admin'"
+            expectedResult: "0"
       changes:
         - insert:
             tableName: users

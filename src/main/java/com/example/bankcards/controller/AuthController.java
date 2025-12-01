@@ -8,6 +8,7 @@ import com.example.bankcards.security.JwtTokenUtil;
 import com.example.bankcards.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -26,7 +27,7 @@ public class AuthController {
     private final UserService userService;
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@Valid @RequestBody LoginRequest loginRequest) {
+    public ResponseEntity<JwtResponse> login(@Valid @RequestBody LoginRequest loginRequest) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword())
         );
@@ -41,13 +42,15 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<?> register(@Valid @RequestBody RegisterRequest registerRequest) {
+    public ResponseEntity<String> register(@Valid @RequestBody RegisterRequest registerRequest) {
         if (userService.existsByUsername(registerRequest.getUsername())) {
-            return ResponseEntity.badRequest().body("Пользователь с таким именем уже существует");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("Пользователь с таким именем уже существует");
         }
 
         if (userService.existsByEmail(registerRequest.getEmail())) {
-            return ResponseEntity.badRequest().body("Пользователь с таким email уже существует");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("Пользователь с таким email уже существует");
         }
 
         User user = userService.registerUser(registerRequest);
